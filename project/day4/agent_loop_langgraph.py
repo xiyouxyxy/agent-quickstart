@@ -136,7 +136,7 @@ if __name__ == "__main__":
     print("Demo 1: invoke 模式")
     print("=" * 60)
     result = app.invoke(
-        {"messages": [HumanMessage(content="3 加 4 再乘以 2 是多少？")]}
+        {"messages": [HumanMessage(content="北京今天多少度？温度乘以2再加10是多少？")]}
     )
     for m in result["messages"]:
         m.pretty_print()
