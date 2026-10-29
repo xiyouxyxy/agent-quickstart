@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "name": "云图库知识库 Agent · 评测集（我自己的）",
+    "created": "2026-10-29",
+    "how_to_fill": "复制本文件改名为 eval_set.json，然后在 items 里往下加题，凑满 20 个。三个示例先别删，照着它们的形状写。每个字段的含义见下面 field_meaning。",
+    "target_mix": "单跳直答 8 题 / 精确型号 4 题 / 多跳计算 3 题 / 应拒答 5 题 = 20 题",
+    "corpus": "project/day5/docs 共 4 篇：01-产品定价 / 02-差旅报销 / 03-故障值班 / 04-硬件保修",
+    "field_meaning": {
+      "id": "题号 Q01-Q20，报告按它对齐",
+      "type": "只能填这四个之一：单跳直答 / 精确型号 / 多跳计算 / 应拒答",
+      "question": "问句，原样喂给 Agent。用真实用户会说的话，不要照抄原文标题",
+      "gold_answer": "标准答案，必须自己翻语料核对过，不许让模型编",
+      "gold_sources": "答案来自哪个文件，写文件名全称；应拒答题写空列表 []",
+      "hops": "期望最少检索轮数，1 或 2",
+      "need_calc": "要不要调 calc 算一下，true / false",
+      "should_refuse": "该不该拒答，true / false"
+    }
+  },
+  "items": [
+    {
+      "id": "Q01",
+      "type": "单跳直答",
+      "question": "专业版每月赠送多少次 AI 扩图额度？",
+      "gold_answer": "500 次",
+      "gold_sources": ["01-云图库Pro产品与定价手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q09",
+      "type": "精确型号",
+      "question": "XR-5000 面向什么场景，支持什么能力？",
+      "gold_answer": "面向企业批量部署，支持多机位管理",
+      "gold_sources": ["04-硬件保修与售后服务手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q16",
+      "type": "应拒答",
+      "question": "员工生日有几天假？",
+      "gold_answer": "语料里没有这条制度，必须拒答",
+      "gold_sources": [],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": true
+    }
+  ]
+}

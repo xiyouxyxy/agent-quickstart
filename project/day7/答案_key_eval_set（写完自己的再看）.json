@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "name": "云图库知识库 Agent · 20 题评测集（参考版）",
+    "created": "2026-10-29",
+    "corpus": "project/day5/docs 共 4 篇：01-产品定价 / 02-差旅报销 / 03-故障值班 / 04-硬件保修",
+    "field_meaning": {
+      "id": "题号，Q01-Q20，评测报告要按它对齐",
+      "type": "单跳直答 / 精确型号 / 多跳计算 / 应拒答",
+      "question": "问句，原样喂给 Agent",
+      "gold_answer": "标准答案（人工核对语料得出，不是模型生成的）",
+      "gold_sources": "答案应该来自哪些文件（只写文件名，不写块号——分块参数一改块号就变了）",
+      "hops": "期望最少检索轮数：1 = 一次就够，2 = 要换 query 再查一次",
+      "need_calc": "是否需要调 calc 工具算一下",
+      "should_refuse": "true = 语料里没有答案，Agent 必须拒答"
+    }
+  },
+  "items": [
+    {
+      "id": "Q01",
+      "type": "单跳直答",
+      "question": "专业版每月赠送多少次 AI 扩图额度？",
+      "gold_answer": "500 次",
+      "gold_sources": ["01-云图库Pro产品与定价手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q02",
+      "type": "单跳直答",
+      "question": "基础版套餐的存储上限是多少？",
+      "gold_answer": "200 GB",
+      "gold_sources": ["01-云图库Pro产品与定价手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q03",
+      "type": "单跳直答",
+      "question": "出差住宿在一线城市每晚上限是多少？",
+      "gold_answer": "600 元",
+      "gold_sources": ["02-差旅与费用报销制度.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q04",
+      "type": "单跳直答",
+      "question": "出差补贴每天多少钱？",
+      "gold_answer": "120 元/天",
+      "gold_sources": ["02-差旅与费用报销制度.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q05",
+      "type": "单跳直答",
+      "question": "P1 故障的首次响应时限是多久？",
+      "gold_answer": "30 分钟",
+      "gold_sources": ["03-线上故障应急值班手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q06",
+      "type": "单跳直答",
+      "question": "P0 故障必须在多久内输出复盘报告？",
+      "gold_answer": "72 小时内",
+      "gold_sources": ["03-线上故障应急值班手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q07",
+      "type": "单跳直答",
+      "question": "硬件设备的免费保修期是多久？",
+      "gold_answer": "自签收之日起 12 个月（覆盖非人为因素导致的硬件故障）",
+      "gold_sources": ["04-硬件保修与售后服务手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q08",
+      "type": "单跳直答",
+      "question": "备用机最长可以免费使用多少天？",
+      "gold_answer": "15 天，超出按每天 20 元计费",
+      "gold_sources": ["04-硬件保修与售后服务手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q09",
+      "type": "精确型号",
+      "question": "XR-5000 面向什么场景，支持什么能力？",
+      "gold_answer": "面向企业批量部署，支持多机位管理",
+      "gold_sources": ["04-硬件保修与售后服务手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q10",
+      "type": "精确型号",
+      "question": "XR-3000 相比 XR-2000 多出了哪些能力？",
+      "gold_answer": "增加了双摄与本地缓存",
+      "gold_sources": ["04-硬件保修与售后服务手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q11",
+      "type": "精确型号",
+      "question": "XR-5000 的保修期最多可以延长到多少个月？",
+      "gold_answer": "24 个月（限企业客户购买延保，需在购机时一并下单）",
+      "gold_sources": ["04-硬件保修与售后服务手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q12",
+      "type": "精确型号",
+      "question": "设备序列号贴在机身的什么位置，格式是什么？",
+      "gold_answer": "机身底部铭牌，格式为「XR + 8 位数字」",
+      "gold_sources": ["04-硬件保修与售后服务手册.md"],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": false
+    },
+    {
+      "id": "Q13",
+      "type": "多跳计算",
+      "question": "专业版和基础版的月费差价，按额外购买额度的单价算，一年下来够多买多少次 AI 扩图？",
+      "gold_answer": "差价 300 元/月 × 12 = 3600 元；3600 ÷ 0.08 = 45000 次",
+      "gold_sources": ["01-云图库Pro产品与定价手册.md"],
+      "hops": 2,
+      "need_calc": true,
+      "should_refuse": false
+    },
+    {
+      "id": "Q14",
+      "type": "多跳计算",
+      "question": "专业版按年付（8 折）一次性付清一年，实际支出是多少元？",
+      "gold_answer": "399 × 12 × 0.8 = 3830.4 元",
+      "gold_sources": ["01-云图库Pro产品与定价手册.md"],
+      "hops": 1,
+      "need_calc": true,
+      "should_refuse": false
+    },
+    {
+      "id": "Q15",
+      "type": "多跳计算",
+      "question": "到一线城市出差 3 天，住宿按上限、加上出差补贴，最多能报多少？",
+      "gold_answer": "住宿 600 × 3 = 1800 元；补贴 120 × 3 = 360 元；合计 2160 元",
+      "gold_sources": ["02-差旅与费用报销制度.md"],
+      "hops": 2,
+      "need_calc": true,
+      "should_refuse": false
+    },
+    {
+      "id": "Q16",
+      "type": "应拒答",
+      "question": "员工生日有几天假？",
+      "gold_answer": "语料里没有这条制度，必须拒答",
+      "gold_sources": [],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": true
+    },
+    {
+      "id": "Q17",
+      "type": "应拒答",
+      "question": "公司年假有多少天？",
+      "gold_answer": "语料里没有年假制度，必须拒答",
+      "gold_sources": [],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": true
+    },
+    {
+      "id": "Q18",
+      "type": "应拒答",
+      "question": "云图库 Pro 支持导出 PSD 格式的文件吗？",
+      "gold_answer": "手册没有写导出格式，必须拒答",
+      "gold_sources": [],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": true
+    },
+    {
+      "id": "Q19",
+      "type": "应拒答",
+      "question": "XR-2000 的电池续航时间是多久？",
+      "gold_answer": "手册只写像素与云同步，没有续航数据，必须拒答",
+      "gold_sources": [],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": true
+    },
+    {
+      "id": "Q20",
+      "type": "应拒答",
+      "question": "公司的股票期权怎么行权？",
+      "gold_answer": "语料完全没有股权相关内容，必须拒答",
+      "gold_sources": [],
+      "hops": 1,
+      "need_calc": false,
+      "should_refuse": true
+    }
+  ]
+}
